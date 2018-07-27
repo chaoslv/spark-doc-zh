@@ -104,7 +104,7 @@ scala> textFile.map(line => line.split(" ").size).reduce((a, b) => if (a > b) a 
 res4: Long = 15
 {% endhighlight %}
 
-第一个 map 操作创建一个新的 Dataset, 将一行数据 map 为一个整型值。在 Dataset 上调用 `reduce` 来找到最大的行计数。参数 `map` 与 `reduce` 是 Scala 函数（closures）, 并且可以使用 Scala/Java 库的任何语言特性。例如, 我们可以很容易地调用函数声明, 我们将定义一个 max 函数来使代码更易于理解 : 
+第一个 map 操作创建一个新的 Dataset, 将一行数据 map 为一个整型值。在 Dataset 上调用 `reduce` 来找到最大的行单词计数。参数 `map` 与 `reduce` 是 Scala 函数（closures）, 并且可以使用 Scala/Java 库的任何语言特性。例如, 我们可以很容易地调用函数声明, 我们将定义一个 max 函数来使代码更易于理解 : 
 
 {% highlight scala %}
 scala> import java.lang.Math
