@@ -123,7 +123,7 @@ $ PYSPARK_PYTHON=/opt/pypy-2.5/bin/pypy bin/spark-submit examples/src/main/pytho
 Spark 程序必须做的第一件事情是创建一个 [SparkContext](api/scala/index.html#org.apache.spark.SparkContext) 对象，它会告诉 Spark 如何访问集群。要创建一个 `SparkContext`，首先需要构建一个包含应用程序的信息的 [SparkConf](api/scala/index.html#org.apache.spark.SparkConf) 对象。
 
 
-每一个 JVM 可能只能激活一个 SparkContext 对象。在创新一个新的对象之前，必须调用 `stop()` 该方法停止活跃的 SparkContext。
+每一个 JVM 最多只能激活一个 SparkContext 对象。在创新一个新的对象之前，必须调用 `stop()` 该方法停止活跃的 SparkContext。
 
 {% highlight scala %}
 val conf = new SparkConf().setAppName(appName).setMaster(master)
